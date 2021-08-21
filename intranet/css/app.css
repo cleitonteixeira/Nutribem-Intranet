@@ -1,0 +1,137 @@
+/* Application Styles */
+body {
+  padding-top: 50px;
+    font: 12pt sans-serif;
+    position: relative !important; /* required */
+    color: #000 !important;
+    background-image: url(../img/Fundo.png);
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+.navbar-default{
+    background: #E9EDF7 !important;   
+}
+.navbar-brand {
+  padding: 0px;
+}
+.form01{
+    border-right: 1px solid;
+}
+.envio{
+    margin-top: 2.5%;
+}
+.Esconde{
+    visibility: none;
+}
+.ferias{
+    border: 1px double;
+    padding: 2px;
+    margin-top: 0.2%;
+}
+.ferias-t{
+    border: 1px solid;
+}
+.hist{
+    margin-bottom: 2.5%;
+}
+.hist:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+.image-login{
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+.senha{
+    width: 1024px !important;
+    position: absolute !important;
+    top: 5% !important;
+    left: 45% !important;
+    margin-left: -400px !important;
+    margin-top: 10% !important;
+    padding: 5%;
+    border-radius: 5px;
+}
+.login{
+    width: 800px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-left: -400px !important;
+    margin-top: 10% !important;
+    padding: 5%;
+    border-radius: 5px;
+        /* 
+    background-image: url(../img/Brand.png) !important;
+    background-position: center, center;
+    background-repeat: no-repeat;
+
+    -webkit-box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);*/
+}
+.error{
+    border-color: red !important;
+}
+.btn-remover{
+    margin-top: 5% !important;
+}
+.tab-content{
+    margin-top: 3% !important;
+}
+.Colaborador{
+    margin-top: -3% !important;
+    margin-bottom: 5% !important;
+}
+.Separa{
+    margin-bottom: 2.5% !important;
+}
+.Separa:last-child{
+    margin-bottom: 0 !important;
+}
+.divisa{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border-top: 1px solid;
+}
+.panel{
+    background-color: rgba(255,255,255,0.5);
+}
+.aso{
+    margin-top: 2% !important;
+    padding: 5px;
+}
+.user-unidade{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 6px 6px 12px 9px;
+    margin-bottom: 2.5%;
+}
+.navbar-brand > img{
+    margin-top: -8.5% !important;
+    width: 100px !important;
+    height: 70px !important;
+}
+.conteudo{
+    margin-top: 1.5%;
+}
+.navbar > .container{
+    margin-top: 1% !important;
+}
+.validacao{
+	margin-top: 2.5%;
+}
+/* IE 6 */
+.legenda {
+   
+}

@@ -1,0 +1,55 @@
+<?php
+require_once("../control/banco/conexao.php");
+require_once("../control/arquivo/funcao/Dados.php");
+$conexao = conexao::getInstance();
+$di = explode('/',$_POST['dataIN']);
+$dataIN = $di[2]."-".$di[1]."-".$di[0];
+$df = explode('/',$_POST['dataFN']);
+$dataFN = $df[2]."-".$df[1]."-".$df[0];
+$sqli = "SELECT c.Nome AS Unidade FROM unidadefaturamento u INNER JOIN cadastro c ON c.idCadastro = u.Cadastro_idCadastro WHERE u.idUnidadeFaturamento = ?;";
+$stmt = $conexao->prepare($sqli);
+$stmt->bindParam(1, $_POST['Unidade']);
+$stmt->execute();
+$rs = $stmt->fetch(PDO::FETCH_OBJ);
+header("Content-type: application/msexcel");
+header("Content-Disposition: attachment; filename=Consumo_".$rs->Unidade."_".date('d-m-Y_H:i:s').".xls");
+echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+echo "<table border='1'>";
+echo "<thead>";
+echo "<tr>";
+echo "<th colspan='2'>CONSUMO UNIDADE: ".$rs->Unidade."</th>";
+echo "<th colspan='6'>PERIODO: ".$_POST['dataIN']." - ".$_POST['dataFN']."</th>";
+echo "</tr>";
+echo "<tr>";
+echo "<th>CLIENTE</th>";
+echo "<th>CNPJ</th>";
+echo "<th>CONTRATO</th>";
+echo "<th>SERVICO</th>";
+echo "<th>QUANTIDADE</th>";
+echo "<th>VALOR UNITARIO</th>";
+echo "<th>TOTAL</th>";
+echo "<th>MES</th>";
+echo "</tr>";
+echo "</thead>";
+echo "<tbody>";
+$sqli = "SELECT cd.Nome, cd.CNPJ, ct.nContrato, l.Servico, SUM(l.Quantidade) AS Quantidade, l.ValorUni AS Valor, (SUM(l.Quantidade)*l.ValorUni) AS Total, MONTH(dLancamento) AS 'MES', YEAR(dLancamento) AS 'Ano' FROM lancamento l INNER JOIN contrato ct ON ct.idContrato = l.Contrato_idContrato INNER JOIN contratante cnt ON cnt.idContratante = ct.Contratante_idContratante INNER JOIN cadastro cd ON cd.idCadastro = cnt.Cadastro_idCadastro WHERE l.Unidade_idUnidade = ? AND l.dLancamento BETWEEN ? AND ? GROUP BY l.Contrato_idContrato, l.Servico, l.ValorUni, YEAR(dLancamento),  MONTH(l.dLancamento) ORDER BY l.Contrato_idContrato, YEAR(dLancamento), MONTH(l.dLancamento);";
+$stmt = $conexao->prepare($sqli);
+$stmt->bindParam(1, $_POST['Unidade']);
+$stmt->bindParam(2, $dataIN);
+$stmt->bindParam(3, $dataFN);
+$stmt->execute();
+$res = $stmt->fetchAll(PDO::FETCH_OBJ);
+foreach($res as $r){
+    echo "<tr>";
+    echo "<td>". utf8_decode($r->Nome) ."</td>";
+    echo "<td>". CNPJ_Padrao(str_pad($r->CNPJ,14, 0, STR_PAD_LEFT)) ."</td>";
+    echo "<td>". utf8_decode($r->nContrato) ."</td>";
+    echo "<td>". utf8_decode($r->Servico) ."</td>";
+    echo "<td>". $r->Quantidade ."</td>";
+    echo "<td>R$ ". number_format($r->Valor,2,',','.') ."</td>";
+    echo "<td>R$ ". number_format($r->Total,2,',','.') ."</td>";
+    echo "<td>". $r->MES."/".$r->Ano ."</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>

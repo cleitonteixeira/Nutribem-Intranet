@@ -1,0 +1,51 @@
+<?php
+require_once("../control/banco/conexao.php");
+require_once("../control/arquivo/funcao/Dados.php");
+$conexao = conexao::getInstance();
+$di = explode('/',$_POST['dataIN']);
+$dataIN = $di[2]."-".$di[1]."-".$di[0];
+$df = explode('/',$_POST['dataFN']);
+$dataFN = $df[2]."-".$df[1]."-".$df[0];
+header("Content-type: application/msexcel");
+header("Content-Disposition: attachment; filename=Consumo_Geral_".date('d-m-Y_H:i:s').".xls");
+echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+echo "<table border='1'>";
+echo "<thead>";
+echo "<tr>";
+echo "<th>GRUPO</th>";
+echo "<th>UNIDADE FORNECIMENTO</th>";
+echo "<th>UNIDADE FATURAMENTO</th>";
+echo "<th>DIA</th>";
+echo "<th>CLIENTE</th>";
+echo "<th>CNPJ</th>";
+echo "<th>CONTRATO</th>";
+echo "<th>SERVICO</th>";
+echo "<th>QUANTIDADE</th>";
+echo "<th>VALOR UNITARIO</th>";
+echo "<th>TOTAL</th>";
+echo "</tr>";
+echo "</thead>";
+echo "<tbody>";
+$sqli = "SELECT g.Nome as Grupo, uft.Nome AS UnidadeFornecimento, cuf.Nome AS UnidadeFaturamento, cd.Nome, cd.CNPJ, ct.nContrato, l.Servico, SUM(l.Quantidade) AS Quantidade, l.ValorUni AS Valor, (SUM(l.Quantidade)*l.ValorUni) AS Total, l.dLancamento as dLancamento FROM lancamento l INNER JOIN contrato ct ON ct.idContrato = l.Contrato_idContrato INNER JOIN contratante cnt ON cnt.idContratante = ct.Contratante_idContratante INNER JOIN cadastro cd ON cd.idCadastro = cnt.Cadastro_idCadastro INNER JOIN unidadefaturamento uf ON uf.idUnidadeFaturamento = l.Unidade_idUnidade INNER JOIN unidadefornecimento uft ON uft.idUnidadeFornecimento = uf.Fornecimento_idFornecimento INNER JOIN grupo g ON g.idGrupo = uft.Grupo_idGrupo INNER JOIN cadastro cuf ON cuf.idCadastro = uf.Cadastro_idCadastro WHERE l.dLancamento BETWEEN ? AND ? GROUP BY g.idGrupo, uft.idUnidadeFornecimento, uf.idUnidadeFaturamento, l.Contrato_idContrato, l.dLancamento, l.Servico ORDER BY g.idGrupo, uf.idUnidadeFaturamento,l.dLancamento,l.Contrato_idContrato;";
+$stmt = $conexao->prepare($sqli);
+$stmt->bindParam(1, $dataIN);
+$stmt->bindParam(2, $dataFN);
+$stmt->execute();
+$res = $stmt->fetchAll(PDO::FETCH_OBJ);
+foreach($res as $r){
+    echo "<tr>";
+    echo "<td>". utf8_decode($r->Grupo) ."</td>";
+    echo "<td>". utf8_decode($r->UnidadeFornecimento) ."</td>";
+    echo "<td>". utf8_decode($r->UnidadeFaturamento) ."</td>";
+    echo "<td>". date('d/m/Y', strtotime($r->dLancamento)) ."</td>";
+    echo "<td>". utf8_decode($r->Nome) ."</td>";
+    echo "<td>". CNPJ_Padrao(str_pad($r->CNPJ,14, 0, STR_PAD_LEFT)) ."</td>";
+    echo "<td>". utf8_decode($r->nContrato) ."</td>";
+    echo "<td>". utf8_decode($r->Servico) ."</td>";
+    echo "<td>". $r->Quantidade ."</td>";
+    echo "<td>R$ ". number_format($r->Valor,2,',','.') ."</td>";
+    echo "<td>R$ ". number_format($r->Total,2,',','.') ."</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>

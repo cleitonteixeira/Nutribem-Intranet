@@ -1,0 +1,74 @@
+/* Application Styles */
+body {
+  padding-top: 50px;
+    font: 12pt sans-serif;
+    position: relative !important; /* required */
+    color: #000 !important;
+    background-color: #dddddd;
+/*    background-image: url(../img/Fundo.png);*/
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-attachment: fixed;
+    background-size: auto;
+}
+.navbar-default{
+    background: #E9EDF7 !important;   
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+.image-login{
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+.login{
+    transition: opacity 2s, padding 2s;
+    width: 800px !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-left: -400px !important;
+    margin-top: 10% !important;
+    padding: 5%;
+    border-radius: 5px;
+        /* 
+    background-image: url(../img/Brand.png) !important;
+    background-position: center, center;
+    background-repeat: no-repeat;
+
+    -webkit-box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,1);*/
+}
+.error{
+    border-color: red !important;
+}
+.btn-remover{
+    margin-top: 5% !important;
+}
+.tab-content{
+    margin-top: 3% !important;
+}
+.Colaborador{
+    margin-top: -3% !important;
+    margin-bottom: 5% !important;
+}
+.Separa{
+    margin-bottom: 2.5% !important;
+}
+.Separa:last-child{
+    margin-bottom: 0 !important;
+}
+.bem{
+    margin-top: 5%;
+}
+.red{
+    background-color: #e90101 !important;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NUTRIBEM - RH Online</title>
+    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/img/Icone.png" type="image/x-icon" />
+    <!-- Place favicon.ico in the root directory -->
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.maskMoney.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.maskedinput.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/bootstrap-select.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/bootstrap.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/app.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.dataTables.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/validator.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/validator.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.cpfcnpj.min.js"></script>
+    <script src="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/js/jquery.complexify.js"></script>
+    <!-- Fim Arquivos JS -->
+    <!-- Início Arquivos CSS -->
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrap-datepicker.min.css"/>
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrap.css">
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/app.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.nutribemrefeicoescoletivas.com.br/intranet/rh-online/css/bootstrap-select.min.css">
+  </head>
+  <body>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th class="text-center" colspan="6"><h2>FICHA DE CADASTRO FUNCIONAL</h2></th>
+		</tr>
+	</thead>
+	<tbody class="text-left">
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"><h4>DADOS PESSOAIS</h4></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Nome Completo:</strong></td>
+			<td colspan="5" class="text-left">Cleiton Teixeira dos Santos</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Data de Nascimento:</strong></td>
+			<td colspan="2" class="text-left">12/12/1993</td>
+			<td class="text-right"><strong>Naturalidade:</strong></td>
+			<td colspan="2" class="text-left">João Pinheiro-MG</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Sexo:</strong></td>
+			<td colspan="2" class="text-left">Masculino</td>
+			<td class="text-right"><strong>Cor:</strong></td>
+			<td colspan="2" class="text-left">Preto</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>CPF:</strong></td>
+			<td class="text-left">11962368602</td>
+			<td class="text-right"><strong>RG:</strong></td>
+			<td class="text-left">17542482</td>
+			<td class="text-right"><strong>Data Emissão RG:</strong></td>
+			<td class="text-left">09/10/2019</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Título de Eleitor:</strong></td>
+			<td class="text-left">715084150213</td>
+			<td class="text-right"><strong>Seção:</strong></td>
+			<td class="text-left">181</td>
+			<td class="text-right"><strong>Zona:</strong></td>
+			<td class="text-left">151</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Habilitação:</strong></td>
+			<td colspan="2" class="text-left"></td>
+			<td class="text-right"><strong>Categoria:</strong></td>
+			<td colspan="2" class="text-left"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Grau de Instrução:</strong></td>
+			<td colspan="2" class="text-left">Ensino Superior Incompleto</td>
+			<td class="text-right"><strong>Estado Civil:</strong></td>
+			<td colspan="2" class="text-left">Solteiro(a)</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Cônjuge:</strong></td>
+			<td class="text-left"></td>
+			<td class="text-right"><strong>Data de Nascimento: <small>Cônjuge</small></strong></td>
+			<td class="text-left"></td>
+			<td class="text-right"><strong>CPF: <small>Cônjuge</small></strong></td>
+			<td class="text-left"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Nome da Mãe: <small>Cônjuge</small></strong></td>
+			<td class="text-left"></td>
+			<td class="text-right"><strong>Certidão de Casamento: </strong></td>
+			<td class="text-left"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"><h4>DADOS DE ENDEREÇO</h4></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Endereço:</strong></td>
+			<td class="text-left">Rua das Jaqueias</td>
+			<td class="text-right"><strong>Número:</strong></td>
+			<td class="text-left">449</td>
+			<td class="text-right"><strong>Cidade:</strong></td>
+			<td class="text-left">Paracatu</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Bairro:</strong></td>
+			<td class="text-left">Primavera</td>
+			<td class="text-right"><strong>CEP: </strong></td>
+			<td class="text-left">38606258</td>
+			<td class="text-right"><strong>UF: </strong></td>
+			<td class="text-left">MG</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"><h4>DADOS DA CONTRATAÇÃO</h4></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Unidade:</strong></td>
+			<td class="text-left">Cozinha Central Paracatu</td>
+			<td class="text-right"><strong>Data de Admissão:</strong></td>
+			<td class="text-left">30/01/2020</td>
+			<td class="text-right"><strong>Função:</strong></td>
+			<td class="text-left">Gestor de TI</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>CTPS:</strong></td>
+			<td class="text-left">1</td>
+			<td class="text-right"><strong>Série: </strong></td>
+			<td class="text-left">1</td>
+			<td class="text-right"><strong>PIS: </strong></td>
+			<td class="text-left">11766716304</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Data Emissão CTPS:</strong></td>
+			<td class="text-left">10/10/2010</td>
+			<td class="text-right"><strong>UF CTPS: </strong></td>
+			<td class="text-left">MG</td>
+			<td class="text-right"><strong>ASO: </strong></td>
+			<td class="text-left">23/01/2020</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"><h4>DADOS DOS FILHOS</h4></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+				<tr>
+			<td class="text-center" colspan="6"><strong>SEM DADOS</strong></td>
+		</tr>
+				<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"><h4>DADOS DE EPI</h4></td>
+		</tr>
+		<tr>
+			<td colspan="6" class="text-center"></td>
+		</tr>
+		<tr>
+			<td class="text-right"><strong>Calça:</strong></td>
+			<td class="text-left">48</td>
+			<td class="text-right"><strong>Camiseta:</strong></td>
+			<td class="text-left">G</td>
+			<td class="text-right"><strong>Botina/Bota:</strong></td>
+			<td class="text-left">43</td>
+		</tr>
+	</tbody>
+</table>
